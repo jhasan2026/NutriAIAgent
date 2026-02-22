@@ -7,8 +7,10 @@ from transformers import (
     BitsAndBytesConfig,
 )
 from langchain_huggingface import ChatHuggingFace, HuggingFacePipeline
+from langchain_huggingface import HuggingFaceEmbeddings
 from typing import Optional
 import torch
+import os
 
 class LLMManager:
     """
@@ -100,8 +102,7 @@ def get_llm_instance() -> ChatHuggingFace:
 
 
 def get_embedding_model():
-    """
-    Embeddings for FAISS RAG.
-    """
-    emb_model = os.getenv("OPENAI_EMBEDDINGS_MODEL", "text-embedding-3-small")
-    return OpenAIEmbeddings(model=emb_model)
+    os.environ['HF_HOME'] = 'F:/GenAI/Hugging_Face_Library/ChatModel/huggingface_cache'
+
+    embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    return embedding_model
