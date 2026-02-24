@@ -1,0 +1,15 @@
+{
+  "n": 3,
+  "avg_latency_ms": 27593.33,
+  "avg_structure": 1.0,
+  "avg_constraint_adherence": 0.6667,
+  "avg_safety_rules": 1.0,
+  "avg_tool_usage": 1.0,
+  "avg_strict_tool_usage": 1.0,
+  "avg_precision_at_k": null,
+  "avg_recall_at_k": null,
+  "avg_keyword_recall": 0.889,
+  "avg_grounding_llm": 0.0,
+  "avg_safety_llm": 0.0,
+  "avg_personalization_llm": 0.0
+}
